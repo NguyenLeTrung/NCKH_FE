@@ -1,0 +1,278 @@
+<!--<div class="page-loading-class">-->
+<!--  <div class="bee-spinner-sc"></div>-->
+<!--</div>-->
+<div class="row main" style="padding-left: 20px;">
+  <div class="row" style="display: flex; justify-content: space-between; margin-left: 25px; margin-right: 15px;">
+    <h3 style="font-weight: bold; font-size: 18px; text-transform: uppercase; color: #101840; margin-bottom: 30px;">Tạo mới bài thi</h3>
+  </div>
+  <form [formGroup]="form" >
+      <div class="row" style=" margin-left: 25px;">
+        <h3 class="title-tab" style="margin-bottom: 15px;">
+          <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H1C2.65685 0 4 1.34315 4 3V17C4 18.6569 2.65685 20 1 20H0V0Z" fill="#101840"/>
+          </svg>
+          Thông tin bài thi
+        </h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <label class="label-text">Lớp <span>*</span></label>
+          <ng-select
+            [items]="lstClass"
+            bindLabel="name"
+            bindValue="code"
+            placeholder="Lựa chọn"
+           formControlName="classCode"
+            [clearable]="false"
+            [searchable]="false"
+            (change)="changeClassroom()"
+            notFoundText="Không tìm thấy"
+            style="
+                color: #101840;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400 !important;
+              "
+          >
+            <ng-template ng-option-tmp let-item="item">
+              <div
+                title="{{ item.name }}"
+                style="
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+              >
+                {{ item.name }}
+              </div>
+            </ng-template>
+          </ng-select>
+          <div *ngIf="(getControl.classCode.dirty || getControl.classCode.touched) && getControl.classCode.invalid">
+              <span class="error-validate" *ngIf="getControl.classCode.errors.required">
+                  Lớp học không được bỏ trống
+              </span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label class="label-text">Tiêu đề bài thi <span>*</span></label>
+          <input type="text" formControlName="title">
+          <div *ngIf="(getControl.title.dirty || getControl.title.touched) && getControl.title.invalid">
+              <span class="error-validate" *ngIf="getControl.title.errors.required">
+                  Tiêu đề bài thi không được bỏ trống
+              </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="label-text">Môn học <span>*</span></label>
+          <ng-select
+            [items]="lstSubject"
+            appendTo="body"
+            bindLabel="name"
+            bindValue="code"
+            placeholder="Lựa chọn"
+            formControlName="subjectCode"
+            [clearable]="false"
+            [searchable]="false"
+            (change)="changeSubject()"
+            notFoundText="Không tìm thấy"
+            style="
+                color: #101840;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400 !important;
+              "
+          >
+            <ng-template ng-option-tmp let-item="item">
+              <div
+                title="{{ item.name }}"
+                style="
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+              >
+                {{ item.name }}
+              </div>
+            </ng-template>
+          </ng-select>
+          <div *ngIf="(getControl.subjectCode.dirty || getControl.subjectCode.touched) && getControl.subjectCode.invalid">
+              <span class="error-validate" *ngIf="getControl.subjectCode.errors.required">
+                  Môn học không được bỏ trống
+              </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="label-text">Kiểu bài thi <span>*</span></label>
+          <ng-select
+            [items]="lstTypeExam"
+            appendTo="body"
+            bindLabel="name"
+            bindValue="id"
+            placeholder="Lựa chọn"
+            formControlName="examType"
+            [clearable]="false"
+            [searchable]="false"
+            (change)="changeExamType()"
+            notFoundText="Không tìm thấy"
+            style="
+                color: #101840;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400 !important;
+              "
+          >
+            <ng-template ng-option-tmp let-item="item">
+              <div
+                title="{{ item.name }}"
+                style="
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+              >
+                {{ item.name }}
+              </div>
+            </ng-template>
+          </ng-select>
+          <div *ngIf="(getControl.examType.dirty || getControl.examType.touched) && getControl.examType.invalid">
+              <span class="error-validate" *ngIf="getControl.examType.errors.required">
+                  Kiểu bài thi không được bỏ trống
+              </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="label-text">Thời gian bắt đầu <span>*</span></label>
+          <input type="date" formControlName="beginExam">
+          <div *ngIf="(getControl.beginExam.dirty || getControl.beginExam.touched) && getControl.beginExam.invalid">
+              <span class="error-validate" *ngIf="getControl.beginExam.errors.required">
+                  Thời gian bắt đầu không được bỏ trống
+              </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="label-text">Thời gian kết thúc <span>*</span></label>
+          <input type="date" formControlName="finshExam">
+          <div *ngIf="(getControl.finshExam.dirty || getControl.finshExam.touched) && getControl.finshExam.invalid">
+              <span class="error-validate" *ngIf="getControl.finshExam.errors.required">
+                  Thời gian kết thúc không được bỏ trống
+              </span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label class="label-text">Thời gian làm bài</label>
+          <input type="text" formControlName="durationExam" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
+        </div>
+      </div>
+
+      <div class="row" style=" margin-left: 25px;">
+        <h3 class="title-tab" style="margin-bottom: 15px;">
+          <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H1C2.65685 0 4 1.34315 4 3V17C4 18.6569 2.65685 20 1 20H0V0Z" fill="#101840"/>
+          </svg>
+          Thiết lâp khác
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label class="label-text" style="font-weight: 500">Tạo câu hỏi ngẫu nhiên</label>
+        </div>
+        <div class="col-md-2">
+          <input type="checkbox" style="height: 20px; width: 20px" formControlName="randomQuestion" (change)="changeRandomQuestion()">
+        </div>
+      </div>
+
+      <div class="row" style=" margin-left: 25px;" *ngIf="!viewRandom">
+        <h3 class="title-tab" style="margin-bottom: 15px;">
+          <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H1C2.65685 0 4 1.34315 4 3V17C4 18.6569 2.65685 20 1 20H0V0Z" fill="#101840"/>
+          </svg>
+          Chọn câu hỏi
+        </h3>
+      </div>
+
+      <div class="row col-md-12" *ngIf="!viewRandom">
+        <div class="table-responsive angular-bootstrap-table pl-2 pr-2 mt-2">
+        <table class="table table-bordered table-sm table-hover table-toeic">
+          <thead class="bg-secondary cus-header">
+            <tr>
+              <th style="width: 50px; padding-left: 15px;min-width: 50px; max-width: 50px; padding-bottom: 7px !important;">
+                <input type="checkbox" style="height: 20px; width: 20px;" (change)="changeCheckbox()" [checked]="checkBoxAll">
+              </th>
+              <th style="padding-bottom: 21px; width: 400px !important;">Câu hỏi</th>
+              <th style="padding-bottom: 21px; width: 50px !important;">Độ khó</th>
+              <th style="padding-bottom: 21px; width: 50px !important;">Loại câu hỏi</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="lstQuestion.length > 0; else noData1">
+            <tr *ngFor="let f of lstQuestion; let index = index" [ngClass]="index % 2 == 0 ? 'ag-row-even' : 'ag-row-odd'">
+              <td style="width: 50px; padding-left: 15px;min-width: 50px; max-width: 50px; height: 50px; padding-top: 8px !important;" >
+                <input type="checkbox" [checked]="f.checked" (change)="addQuestionExam(f)" style="height: 20px; width: 20px;">
+              </td>
+              <td style="display: none">{{f.id}}</td>
+              <td class="overflow-dot" style="height: 50px; width: 400px !important;" [matTooltip]="f.questionText">{{f.questionText}}</td>
+              <td style="height: 50px; width: 50px !important;">{{f.level}}</td>
+              <td style="height: 50px; width: 50px !important;">{{f.questionType}}</td>
+            </tr>
+          </tbody>
+          <ng-template #noData1>
+            <tbody #noData1>
+            <tr>
+              <td colspan="12" class="text-center" style="font-weight: 400 !important; font-size: 12px">Không có dữ liệu</td>
+            </tr>
+            </tbody>
+          </ng-template>
+        </table>
+        </div>
+      </div>
+
+    <div class="row" style=" margin-left: 25px;">
+      <h3 class="title-tab" style="margin-bottom: 15px;">
+        <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H1C2.65685 0 4 1.34315 4 3V17C4 18.6569 2.65685 20 1 20H0V0Z" fill="#101840"/>
+        </svg>
+        Câu hỏi đã chọn
+      </h3>
+    </div>
+
+      <div class="row col-md-12">
+        <div class="table-responsive angular-bootstrap-table pl-2 pr-2 mt-2">
+          <table class="table table-bordered table-sm table-hover table-toeic">
+            <thead class="bg-secondary cus-header">
+            <tr>
+              <th style="padding-bottom: 21px; width: 450px; padding-left: 15px; !important;">Câu hỏi</th>
+              <th style="padding-bottom: 21px; width: 50px; !important;">Độ khó</th>
+              <th style="padding-bottom: 21px; width: 50px; !important;">Loại câu hỏi</th>
+              <th style="padding-bottom: 21px; width: 10px; !important;"></th>
+            </tr>
+            </thead>
+            <tbody *ngIf="lstQuestionExam.length > 0; else noData1">
+            <tr *ngFor="let f of lstQuestionExam; let index = index" [ngClass]="index % 2 == 0 ? 'ag-row-even' : 'ag-row-odd'">
+              <td style="display: none">{{f.id}}</td>
+              <td class="overflow-dot" style="padding-bottom: 15px; padding-left: 15px; width: 450px !important" [matTooltip]="f.questionText">{{f.questionText}}</td>
+              <td style="padding-bottom: 15px; width: 50px !important;">{{f.level}}</td>
+              <td style="padding-bottom: 15px; width: 50px !important;">{{f.questionType}}</td>
+              <td style="width: 20px">
+                <div >
+                  <i class="fa fa-times" style="color:red; padding-right: 20px; cursor: pointer;" (click)="deleteQuestion(index, f)"></i>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+            <ng-template #noData1>
+              <tbody #noData1>
+              <tr>
+                <td colspan="12" class="text-center" style="font-weight: 400 !important; font-size: 12px">Không có dữ liệu</td>
+              </tr>
+              </tbody>
+            </ng-template>
+          </table>
+        </div>
+      </div>
+
+      <div class="row" style="display: flex; justify-content: center;margin: 15px;">
+        <button class="btn-md btn-gray" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+        <button class="btn-md btn-or" type="submit" (click)="submit()" [disabled]="form.invalid">{{ 'COMMON.OK' | translate }}</button>
+      </div>
+  </form>
+</div>

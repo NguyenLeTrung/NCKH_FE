@@ -1,0 +1,85 @@
+<div class="row main" style="padding-left: 20px;">
+  <div class="row" style="display: flex; justify-content: space-between; margin-left: 25px; margin-right: 15px;">
+    <h3 style="font-weight: bold; font-size: 18px; text-transform: uppercase; color: #101840; margin-bottom: 30px;">Bài thi</h3>
+  </div>
+  <div class="row" style=" margin-left: 25px;">
+    <h3 class="title-tab" style="margin-bottom: 15px;">
+      <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H1C2.65685 0 4 1.34315 4 3V17C4 18.6569 2.65685 20 1 20H0V0Z" fill="#101840"/>
+      </svg>
+      Thông tin bài thi
+    </h3>
+    <div style="margin-left: 20px; font-size: 16px; font-weight: 600;">Thời gian làm bài: <span class="font-bold text-xl" >{{counter | formatTime}}</span></div>
+  </div>
+
+  <!-- ================ -->
+  <ng-container *ngFor="let ex of examUser.lstQuestion; let i = index">
+    <div class="test">
+      <div class="test-question">
+        <h3 class="test-question-title">Câu hỏi {{i+1}}</h3>
+        <p class="test-question-desc">Mức độ: <span>{{ex.level}}</span></p>
+        <p class="test-question-num">{{ex.point}} Điểm</p>
+      </div>
+      <div class="test-answer">
+        <h3 class="test-answer-desc">{{ex.questionText}}:</h3>
+        <p class="test-answer-note">Chọn câu trả lời</p>
+        <ul class="test-answer-list">
+          <ng-container *ngFor="let c of ex.lstChoice; let i = index">
+            <li class="test-answer-item">
+              <input type="radio" name="answer_{{ex.id}}" [checked]="c.choice" (change)="chooseChoice(ex.id, c.id)">
+              <label>Đáp án {{i+1}}. {{c.choiceText}}</label>
+            </li>
+          </ng-container>
+<!--          <li class="test-answer-item">-->
+<!--            <input type="radio" name="answer_{{ex.id}}" [(ngModel)]="ex.choose">-->
+<!--            <label>B. {{ex.lstChoice[1].choiceText}}</label>-->
+<!--          </li>-->
+<!--          <li class="test-answer-item">-->
+<!--            <input type="radio" name="answer_{{ex.id}}" [(ngModel)]="ex.choose">-->
+<!--            <label>C. {{ex.lstChoice[2].choiceText}}</label>-->
+<!--          </li>-->
+<!--          <li class="test-answer-item">-->
+<!--            <input type="radio" name="answer_{{ex.id}}" [(ngModel)]="ex.choose">-->
+<!--            <label>D. {{ex.lstChoice[3].choiceText}}</label>-->
+<!--          </li>-->
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+
+
+<!--  <div class="test">-->
+<!--    <div class="test-question">-->
+<!--      <h3 class="test-question-title">Question 1</h3>-->
+<!--      <p class="test-question-desc">Difficult: <span>Easy</span></p>-->
+<!--      <p class="test-question-num">5 pts</p>-->
+<!--    </div>-->
+<!--    <div class="test-answer">-->
+<!--      <h3 class="test-answer-desc">Các kiểu dữ liệu thông dụng của Excel là:</h3>-->
+<!--      <p class="test-answer-note">Select your answer</p>-->
+<!--      <ul class="test-answer-list">-->
+<!--        <li class="test-answer-item">-->
+<!--          <input type="radio" name="answer" id="answer-one">-->
+<!--          <label for="answer-one">A. Kiểu chuỗi, kiểu văn bản, kiểu ngày tháng</label>-->
+<!--        </li>-->
+<!--        <li class="test-answer-item">-->
+<!--          <input type="radio" name="answer" id="answer-two">-->
+<!--          <label for="answer-two">B. Kiểu chuỗi, kiểu số, kiểu logic, kiểu ngày tháng, kiểu công thức</label>-->
+<!--        </li>-->
+<!--        <li class="test-answer-item">-->
+<!--          <input type="radio" name="answer" id="answer-three">-->
+<!--          <label for="answer-three">C. Kiểu số, kiểu logic, kiểu ngày tháng</label>-->
+<!--        </li>-->
+<!--        <li class="test-answer-item">-->
+<!--          <input type="radio" name="answer" id="answer-four">-->
+<!--          <label for="answer-four">D. Kiểu công thức, kiểu hàm, kiểu số, kiểu ngày tháng</label>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <div class="row" style="display: flex; justify-content: center;margin: 15px;">
+    <button class="btn-md btn-gray" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+    <button class="btn-md btn-or" type="submit" (click)="submit()">{{ 'COMMON.OK' | translate }}</button>
+  </div>
+</div>

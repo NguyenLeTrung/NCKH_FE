@@ -1,0 +1,253 @@
+#kt_wrapper {
+  padding-top: 0 !important;
+}
+
+.col-md-3,
+.col-md-4,
+.col-md-6,
+.col-md-12,
+.col-md-8,
+.col-md-9 {
+  margin-bottom: 10px;
+  input {
+    background: #ffffff;
+    border: 1px solid #d8dae5;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    height: 36px;
+  }
+  label {
+    font-weight: 500;
+    font-size: 10px;
+    color: #474d66;
+  }
+}
+.row {
+  overflow: hidden !important;
+  width: 100%;
+  max-width: 100%;
+  .row {
+    margin-left: 0px !important;
+  }
+}
+.des {
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  color: #8f95b2;
+  margin-top: 10px;
+}
+.modal-footer .btn-action {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.modal-title {
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600 !important;
+  width: 100%;
+}
+
+.modal-footer .type-action {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn-md {
+  width: 105px;
+  height: 32px;
+  left: 726px;
+  top: 774px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+}
+.btn-gray {
+  background: #e6e8f0;
+  margin-right: 10px;
+  color: #696f8c;
+}
+.btn-or {
+  background: #f26522;
+}
+.modal-footer .btn-action {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.row.main {
+  margin: 0px;
+  max-width: max-content;
+  width: 100%;
+  margin-left: 2%;
+  .row {
+    margin: 0px;
+  }
+}
+
+.value-item {
+  color: #101840;
+  width: 100%;
+  font-weight: 500;
+}
+
+:host ::ng-deep {
+  .ag-header-group-cell-label {
+    justify-content: center;
+  }
+  .ag-header-group-cell-with-group {
+    border-left: 1px solid #e2dedb;
+  }
+  .ng-select-container .ng-value-container .ng-placeholder {
+    top: auto !important;
+  }
+  .ng-select .ng-arrow-wrapper .ng-arrow {
+    transform: translateY(1px);
+  }
+  .ng-select .ng-arrow-wrapper {
+    background: #f4f6fa;
+    border-radius: 4px;
+    margin-right: 5px;
+    padding: 3px;
+  }
+
+  .ag-header-group-text {
+    font-size: 10px;
+  }
+}
+
+.page-overlay-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1009;
+  background: rgba(121, 121, 121, 0.5);
+  opacity: 0;
+
+  .bee-spinner {
+    width: 120px;
+    height: 100px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    //background-image: url("https://cdn.dribbble.com/users/77598/screenshots/12570694/media/8eaa19b2448ee8719f559e4d1ec931bc.gif");
+    background-repeat: no-repeat;
+    background-size: 97%;
+    animation: bouncing 0.4s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite
+    alternate both;
+    opacity: 0;
+  }
+}
+
+input {
+  height: 36px !important;
+}
+
+.btn-md {
+  width: 111px;
+  height: 40px;
+  left: 726px;
+  top: 774px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+}
+.btn-gray {
+  background: #e6e8f0;
+  margin-right: 10px;
+  color: #696f8c;
+}
+.btn-or {
+  background: #f26522;
+}
+
+.label-text {
+  text-transform: uppercase;
+}
+
+// ====================
+
+.test {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+
+  &-question {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(143, 149, 178, 0.2);
+    border-radius: 0.5rem;
+    height: max-content;
+  }
+
+  &-question-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &-question-desc,
+  &-question-num {
+    font-size: 0.875rem;
+  }
+
+  //
+
+  &-answer {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(143, 149, 178, 0.2);
+
+    &-desc {
+      font-size: 1.5rem;
+    }
+
+    &-note {
+      font-size: 1rem;
+    }
+
+    &-list {
+      display: grid;
+      row-gap: 1rem;
+      padding: 0 40px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      list-style-type: none;
+    }
+
+    &-item label {
+      font-size: 1.25rem;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    &-item input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      outline: none;
+      margin-right: 1rem;
+    }
+  }
+}
+
+// ====================

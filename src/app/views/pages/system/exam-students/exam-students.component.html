@@ -1,0 +1,41 @@
+<div class="row main" style="padding-left: 20px;">
+  <div class="row" style="display: flex; justify-content: space-between; margin-left: 25px; margin-right: 15px;">
+    <h3 style="font-weight: bold; font-size: 18px; text-transform: uppercase; color: #101840; margin-bottom: 30px;">Bài thi</h3>
+  </div>
+    <div class="row" style=" margin-left: 25px;">
+      <h3 class="title-tab" style="margin-bottom: 15px;">
+        <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H1C2.65685 0 4 1.34315 4 3V17C4 18.6569 2.65685 20 1 20H0V0Z" fill="#101840"/>
+        </svg>
+        DANH SÁCH BÀI THI
+      </h3>
+    </div>
+
+    <div class="row col-md-12" *ngFor="let f of lstExamUser">
+      <!-- <div class="card col-md-4 bg-light">
+        <a href="/#/system/exam-student-detail?id={{f.id}}"><p>{{f.title}}</p></a>
+      </div> -->
+      <!-- <div class="card col-md-4" style="width: 18rem;">
+        <img class="card-img-top" src="/assets/media/users/blank.png">
+        <div class="card-body">
+          <h5 class="card-title">Bài thi</h5>
+          <a href="/#/system/exam-student-detail?id={{f.id}}"><p>{{f.title}}</p></a>
+        </div>
+      </div> -->
+      <!--  -->
+      <div class="col-md-4">
+        <div class="card product-item border-0 mb-4">
+            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                <img class="img-fluid w-100" src="/assets/media/users/blank.png" alt="">
+            </div>
+            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                <h6 class="text-truncate mb-3">Bài thi</h6>
+                <div class="d-flex justify-content-center">
+                  <a href="/thithu/#/system/exam-student-detail?id={{f.id}}"><p>{{f.title}}</p></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    <!--  -->
+    </div>
+</div>

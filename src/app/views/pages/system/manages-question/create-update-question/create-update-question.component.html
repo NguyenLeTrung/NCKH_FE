@@ -1,0 +1,220 @@
+<div class="modal-content modal-dialog-custom">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="modal-header">
+        <h4
+          class="modal-title"
+          style="
+            font-size: 18px;
+            font-weight: 600;
+            font-family: Inter;
+            line-height: 30px;
+            color: #101840;
+            text-align: center !important;
+          "
+        >
+          Thêm câu hỏi
+        </h4>
+      </div>
+      <div class="modal-body" style="padding: 15px 10px !important">
+        <div class="row">
+          <div class="col-md-12">
+            <h4
+              class="modal-title"
+              style="
+                text-align: left;
+                text-transform: uppercase;
+                font-family: Inter;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px !important;
+              "
+            >
+              Thông tin
+            </h4>
+          </div>
+          <div class="col-md-12">
+            <label>Môn học<span> *</span></label>
+            <ng-select
+              [items]="lstSubject"
+              bindLabel="name"
+              bindValue="code"
+              placeholder="Lựa chọn"
+              formControlName="subjectCode"
+              [clearable]="false"
+              notFoundText="Không tìm thấy"
+              style="
+                color: #101840;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400 !important;
+              "
+            >
+              <ng-template ng-option-tmp let-item="item">
+                <div
+                  title="{{ item.name }}"
+                  style="
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+                >
+                  {{ item.name }}
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+<!--          <div class="col-md-6">-->
+<!--            <label>Nội dung <span> *</span></label>-->
+<!--            <input-->
+<!--              type="text"-->
+<!--              style="color: #474d66; font-weight: 500; font-size: 12px !important"-->
+<!--              formControlName="question_text"-->
+<!--            />-->
+<!--          </div>-->
+          <div class="col-md-12">
+            <label>Độ khó</label>
+            <ng-select
+              [items]="lstLevel"
+              bindLabel="name"
+              bindValue="id"
+              placeholder="Lựa chọn"
+              formControlName="level"
+              [clearable]="true"
+              notFoundText="Không tìm thấy"
+              style="
+                color: #101840;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400 !important;
+              "
+            >
+              <ng-template ng-option-tmp let-item="item">
+                <div
+                  title="{{ item.name }}"
+                  style="
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+                >
+                  {{ item.name }}
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+          <div class="col-md-12">
+            <label>Kiểu câu hỏi</label>
+            <ng-select
+              [items]="lstTypeQuestion"
+              bindLabel="name"
+              bindValue="code"
+              placeholder="Lựa chọn"
+              formControlName="questionType"
+              [clearable]="true"
+              notFoundText="Không tìm thấy"
+              style="
+                color: #101840;
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 400 !important;
+              "
+              (change)="changeQuestionType()"
+            >
+              <ng-template ng-option-tmp let-item="item">
+                <div
+                  title="{{ item.name }}"
+                  style="
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+                >
+                  {{ item.name }}
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+          <div class="col-md-12">
+              <label>Nội dung câu hỏi</label>
+              <input type="text"
+              style="color: #474d66; font-weight: 500; font-size: 12px !important"
+              formControlName="questionText"
+              placeholder="Nhập nội dung câu hỏi">
+          </div>
+<!--          <div *ngFor=""></div>-->
+          <div class="col-md-12">
+            <label>Đáp án 1</label>
+            <input type="text"
+            style="color: #474d66; font-weight: 500; font-size: 12px !important"
+            formControlName="choiceText1">
+          </div>
+          <div class="col-md-12">
+            <label>Đáp án đúng</label>
+            <input type="checkbox" style="width: 20px; height: 20px;" formControlName="corrected1">
+          </div>
+          <div class="col-md-12">
+            <label>Đáp án 2</label>
+            <input type="text"
+            style="color: #474d66; font-weight: 500; font-size: 12px !important"
+            formControlName="choiceText2">
+          </div>
+          <div class="col-md-12">
+            <label>Đáp án đúng</label>
+            <input type="checkbox" style="width: 20px; height: 20px;" formControlName="corrected2">
+          </div>
+          <div class="col-md-12">
+            <label>Đáp án 3</label>
+            <input type="text"
+            style="color: #474d66; font-weight: 500; font-size: 12px !important"
+            formControlName="choiceText3">
+          </div>
+          <div class="col-md-12">
+            <label>Đáp án đúng</label>
+            <input type="checkbox" style="width: 20px; height: 20px;" formControlName="corrected3">
+          </div>
+          <div class="col-md-12">
+            <label>Đáp án 4</label>
+            <input type="text"
+            style="color: #474d66; font-weight: 500; font-size: 12px !important"
+            formControlName="choiceText4">
+          </div>
+          <div class="col-md-12">
+            <label>Đáp án đúng</label>
+            <input type="checkbox" style="width: 20px; height: 20px;" formControlName="corrected4">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-action">
+          <button
+            type="button"
+            class="btn-md btn-gray"
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              font-family: Inter;
+              line-height: 16px;
+              text-align: center !important;
+            "
+            (click)="cancel()"
+          >
+            Hủy bỏ
+          </button>
+          <button
+            type="submit"
+            class="btn-md btn-or"
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              font-family: Inter;
+              line-height: 16px;
+              text-align: center !important;
+            "
+            [disabled]="!form.valid"
+          >
+            Lưu lại
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
