@@ -114,7 +114,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy{
   colors:any = {
     notExist: '#FBCDB9',
     hover: '#F9A886',
-    exist: '#F26522',
+    exist: '#5F9EA0',
   }
 
   constructor(
@@ -549,7 +549,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy{
       type: 'column',
       data: [],
       name: 'revenue',
-      color:'#F26522',
+      color:'#5F9EA0',
       axis: 'revenue',
       width: 3,
   }
@@ -597,7 +597,7 @@ public valueAxesCol =
 
   public borderOptions = {
     // width: 5,
-    // color: '#F26522',
+    // color: '#5F9EA0',
     // borderRadius: 5
   };
 

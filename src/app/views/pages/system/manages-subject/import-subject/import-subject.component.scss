@@ -1,12 +1,12 @@
 .row{
     margin: 0px 15px;
   }
-  
+
   .row.afu-valid-file.ng-star-inserted{
     margin-left: 12px;
   }
   .witget-title{
-  
+
     border-radius: 8px 8px 0px 0px;
     font-weight: bold;
     font-size: 16px;
@@ -23,7 +23,7 @@
     color: #101840;
     display: flex;
     height: 52px;
-  
+
   }
   .list-action-dv{
     display: flex;
@@ -77,13 +77,13 @@
     align-items: center;
     padding: 8px 32px;
     height: 40px;
-    background: #F26522;
+    background: #5F9EA0;
     border-radius: 4px;
     color: #fff;
     border: none;
     justify-content: center;
     font-weight: 600;
-  
+
   }
   .search-dv{
     margin-top: 20px !important;
@@ -171,20 +171,20 @@
     font-size: 12px;
     border: none;
   }
-  
+
   .btn-gray{
     background: #E6E8F0;
     margin-right: 10px;
     color: #696F8C;
   }
   .btn-or{
-    background: #F26522
+    background: #5F9EA0
   }
-  
+
   button:disabled {
     opacity: 0.7 !important;
   }
-  
+
   .modal-footer{
     display: flex;
     justify-content: center;
@@ -204,7 +204,7 @@
     color: #8F95B2;
     margin-top: 10px;
   }
-  
+
   .modal-dialog-custom .title-list-file{
     width: 100%;
     display: flex !important;
@@ -230,11 +230,11 @@
   angular-file-uploader, #div1{
     width: 100%;
   }
-  
+
   .afu-select-btn.ng-star-inserted {
     margin-top: 100px;
   }
-  
+
   .container-upload {
     display: flex; height: 104px;
     flex-direction: column;
@@ -242,7 +242,7 @@
     background: #FFFFFF; border: 1px dashed #D8DAE5; box-sizing: border-box;
     border-radius: 8px; align-items: center;
   }
-  
+
   .container-upload button{
     display: flex;
     flex-direction: row;
@@ -252,7 +252,7 @@
     background: #3366FF;
     border-radius: 4px;
   }
-  
+
   .container-upload span {
     font-style: italic;
     font-weight: normal;
@@ -301,8 +301,8 @@
     color: #8F95B2;
     margin-bottom: 0px !important;
   }
-  
-  
+
+
   @keyframes bouncing {
     0% {
       top: 40%;
@@ -311,17 +311,17 @@
       top: 30%;
     }
   }
-  
+
   @keyframes fadein {
     0% {
       opacity: 0;
     }
-  
+
     100% {
       opacity: 1;
     }
   }
-  
+
   .page-overlay-wrapper {
     position: fixed;
     width: 100%;
@@ -330,7 +330,7 @@
     top: 0;
     z-index: 1009;
     background: rgba(121, 121, 121, 0.5);
-  
+
     .bee-spinner {
       width: 120px;
       height: 100px;
@@ -364,17 +364,17 @@
       margin-right: 5px;
       padding: 3px;
     }
-  
+
     .ag-header-group-text{
       font-size: 10px;
     }
   }
-  
+
   .result-import--success{
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+
     a {
       display: block;
       font-family: Inter;
@@ -386,7 +386,7 @@
       cursor: pointer;
     }
   }
-  
+
   ::ng-deep.mat-form-field-disabled{
     background-size: 1px 100% !important;
     .mat-input-element {
@@ -412,12 +412,12 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  
+
     font-weight: 600;
     font-size: 12px;
     color: #474D66;
   }
-  
+
   /* Hide the browser's default checkbox */
   .container-radio input {
     position: absolute;
@@ -426,7 +426,7 @@
     height: 0;
     width: 0;
   }
-  
+
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
@@ -438,15 +438,15 @@
     border: 1px solid #D8DAE5;
     border-radius: 50%;
   }
-  
+
   /* On mouse-over, add a grey background color */
   .container-radio:hover input ~ .checkmark {
-  
+
   }
-  
+
   /* When the checkbox is checked, add a blue background */
   .container-radio input:checked ~ .checkmark {
-  
+
     background:url('./../../../../../../assets/media/img/radiocheck.svg');
     background-repeat: no-repeat;
     background-position-x: 28%;
@@ -454,19 +454,19 @@
     outline: none;
     border: none;
   }
-  
+
   /* Create the checkmark/indicator (hidden when not checked) */
   .container-radio:after {
     content: "";
     position: absolute;
     display: none;
   }
-  
+
   /* Show the checkmark when checked */
   .container-radio input:checked ~ .checkmark:after {
     display: block;
   }
-  
+
   /* Style the checkmark/indicator */
   .container-radio .checkmark:after {
     left: 9px;
@@ -479,4 +479,3 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-  

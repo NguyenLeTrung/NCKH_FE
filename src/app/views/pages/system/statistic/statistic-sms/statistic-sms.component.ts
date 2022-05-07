@@ -119,7 +119,7 @@ export class StatisticSmsComponent implements OnInit {
         data1: this.list,
         stack: true,
         name: 'on battery',
-        color: '#F26522'
+        color: '#5F9EA0'
       }];
       // ------
       if(this.max < 2500)

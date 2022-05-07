@@ -96,7 +96,7 @@
     align-items: center;
     padding: 8px 32px;
     height: 40px;
-    background: #F26522;
+    background: #5F9EA0;
     border-radius: 4px;
     color: #fff;
     border: none;
@@ -213,7 +213,7 @@
     color: #696F8C;
   }
   .btn-or{
-    background: #F26522
+    background: #5F9EA0
   }
   .modal-footer .btn-action{
     display: flex;
@@ -481,7 +481,7 @@
   padding-right: 0px;
   // flex-basis: 50%;
   height: 184px;
-  // background: #ffffff; 
+  // background: #ffffff;
   border-radius: 10px;
 }
 
@@ -808,18 +808,18 @@ line-height: 20px;
 }
 
 .dashboard-infor-statistical{
-    margin-top: 17px; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
+    margin-top: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     max-width: 75%;
 }
 
 .dashboard-infor-statistical1{
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
-  max-width: 80%; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
 }
 
 .page-loading-class{
@@ -841,6 +841,6 @@ line-height: 20px;
     position: absolute;
     z-index: 1000;
     overflow: auto;
-    pointer-events: auto;  
+    pointer-events: auto;
   }
 }

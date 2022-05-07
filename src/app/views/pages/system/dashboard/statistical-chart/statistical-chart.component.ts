@@ -28,12 +28,12 @@ export class StatisticalChartComponent implements OnInit {
     color: '#25CBD6',
     axis: 'numberPeople'
   }
-  
+
   public seriesCol = {
       type: 'column',
       data: [30000, 38000, 40000, 32000, 42000],
       name: 'revenue',
-      color:'#F26522',
+      color:'#5F9EA0',
       axis: 'revenue',
       width: 3,
   }
@@ -80,7 +80,7 @@ public valueAxes: any[] = [
 
   public borderOptions = {
     // width: 5,
-    // color: '#F26522',
+    // color: '#5F9EA0',
     // borderRadius: 5
   };
 
@@ -104,7 +104,7 @@ public categories: string[] = ['GC_01', 'GC_02', 'GC_03', 'GC_04', 'GC_05','GC_0
 ];
 
 labels = {
-  
+
   rotation: {
     angle: -45,
     align: "center"

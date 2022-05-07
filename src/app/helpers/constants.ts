@@ -56,7 +56,7 @@ export const STUDENTS = {
   STATUS: [
     { name: 'Đang học', id: 0, color: '#52BD94'},
     { name: 'Bảo lưu', id: 1, color: '#696F8C' },
-    { name: 'Đã thôi học', id: 2, color: '#F26522' },
+    { name: 'Đã thôi học', id: 2, color: '#5F9EA0' },
     { name: 'Đã chuyển trường', id: 3, color: '#D14343' },
   ],
   TRAINING_SYSTEM: [
@@ -101,7 +101,7 @@ export const TEACHER = {
     { name: 'Đang làm việc', id: 0, color: '#52BD94'},
     { name: 'Đã nghỉ việc', id: 1, color: '#D14343' },
     { name: 'Đã nghỉ hưu', id: 2, color: '#474D66' },
-    { name: 'Tạm nghỉ', id: 3, color: '#F26522' },
+    { name: 'Tạm nghỉ', id: 3, color: '#5F9EA0' },
   ]
 }
 

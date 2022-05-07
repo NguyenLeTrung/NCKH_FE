@@ -69,7 +69,7 @@ export class StatisticComponent implements OnInit, OnDestroy {
   // Mảng màu
   rgb: string;
   color: number;
-  listColor = ['#F26522', '#7DFC00', '#0EC434', '#228C68', '#8AD8E8', '#235B54', '#29BDAB', '#3998F5', '#37294F', '#277DA7', '#3750DB', '#F22020', '#991919', '#FFCBA5', '#E68F66', '#C56133', '#96341C', '#632819', '#FFC413', '#201923', '#2F2AA0', '#B732CC', '#772B9D', '#F07CAB', '#D30B94', '#C3A5B4', '#946AA2', '#5D4C86', '#006410', '#907038'];
+  listColor = ['#5F9EA0', '#7DFC00', '#0EC434', '#228C68', '#8AD8E8', '#235B54', '#29BDAB', '#3998F5', '#37294F', '#277DA7', '#3750DB', '#F22020', '#991919', '#FFCBA5', '#E68F66', '#C56133', '#96341C', '#632819', '#FFC413', '#201923', '#2F2AA0', '#B732CC', '#772B9D', '#F07CAB', '#D30B94', '#C3A5B4', '#946AA2', '#5D4C86', '#006410', '#907038'];
   cellStyle = {
     'font-size': '12px',
     'align-items': 'center',
