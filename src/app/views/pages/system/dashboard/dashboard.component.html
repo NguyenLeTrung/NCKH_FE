@@ -3,7 +3,7 @@
 <div class="row" class="main-dashboard">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="row menu-action-dv">
-            <h3 style="padding-left: 18px; text-transform: uppercase">Thống kê</h3>
+            <h3 style="padding-left: 18px; text-transform: uppercase">Trang chủ</h3>
             <div class="list-action-dv" style="padding-right: 1px;">
               <!-- <div
                 class="btn-action-dv blue"
@@ -23,62 +23,62 @@
 
                 Đồng bộ dữ liệu
               </div> -->
-              <div class="btn-action-dv" style="background: #FFFFFF; color: #474D66;width: 158px; background: #FFFFFF; height: 36px; margin-right: 25px;" tabindex="0">
-                <!-- <mat-form-field style=" border-radius: 5px;"> -->
-                  <div class="month-ip" style="cursor: default;">
-                    {{'DASHBOARD.MONTH' | translate}}
-                  </div>
-                  <input
-                    matInput
-                    readonly
-                    (click)="openPopup()"
-                    [matDatepicker]="dp"
-                    [formControl]="date"
-                    [max]="maxDate"
-                    (dateChange)="searchData()"
-                    class="ip-date"
-                    style="background: none !important; cursor: pointer;"
-                  />
-                  <mat-datepicker-toggle matSuffix [for]="dp" class="mat-picker-ip">
-                    <mat-icon class="mat-icon-ip" matDatepickerToggleIcon>arrow_drop_down</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker
-                    #dp
-                    startView="multi-year"
-                    (yearSelected)="chosenYearHandler($event)"
-                    (monthSelected)="chosenMonthHandler($event, dp)"
-                    panelClass="example-month-picker"
-                    (closed)="onClosed(dp)"
-                  >
-                  </mat-datepicker>
-                <!-- </mat-form-field> -->
-              </div>
+<!--              <div class="btn-action-dv" style="background: #FFFFFF; color: #474D66;width: 158px; background: #FFFFFF; height: 36px; margin-right: 25px;" tabindex="0">-->
+<!--                &lt;!&ndash; <mat-form-field style=" border-radius: 5px;"> &ndash;&gt;-->
+<!--                  <div class="month-ip" style="cursor: default;">-->
+<!--                    {{'DASHBOARD.MONTH' | translate}}-->
+<!--                  </div>-->
+<!--                  <input-->
+<!--                    matInput-->
+<!--                    readonly-->
+<!--                    (click)="openPopup()"-->
+<!--                    [matDatepicker]="dp"-->
+<!--                    [formControl]="date"-->
+<!--                    [max]="maxDate"-->
+<!--                    (dateChange)="searchData()"-->
+<!--                    class="ip-date"-->
+<!--                    style="background: none !important; cursor: pointer;"-->
+<!--                  />-->
+<!--                  <mat-datepicker-toggle matSuffix [for]="dp" class="mat-picker-ip">-->
+<!--                    <mat-icon class="mat-icon-ip" matDatepickerToggleIcon>arrow_drop_down</mat-icon>-->
+<!--                  </mat-datepicker-toggle>-->
+<!--                  <mat-datepicker-->
+<!--                    #dp-->
+<!--                    startView="multi-year"-->
+<!--                    (yearSelected)="chosenYearHandler($event)"-->
+<!--                    (monthSelected)="chosenMonthHandler($event, dp)"-->
+<!--                    panelClass="example-month-picker"-->
+<!--                    (closed)="onClosed(dp)"-->
+<!--                  >-->
+<!--                  </mat-datepicker>-->
+<!--                &lt;!&ndash; </mat-form-field> &ndash;&gt;-->
+<!--              </div>-->
             </div>
           </div>
         <div class="row" style="margin-right: 15px;">
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <div class="map" id="position-cal" style="height: 100%;">
-                  <div id="SLTP" #SLTP  (mouseenter)="toolTipCanClick()" (mouseleave)="toolTipCanNotClick()" >
-                    <div *ngIf="enableTooltip && showToolTip">
-                      <div class="hero1" >
-                        <span class="tool-tip-text" style="font-weight: 500;">{{provinceName}}</span>
-                        <br>
-                        <span (click)="openDialog(proviceID,provinceName)" class="tool-tip-text" style="font-weight: 700; cursor: pointer;">{{school}} {{'DASHBOARD.SCHOOL' | translate}}</span>
-                      </div>
-                      <div class="hero2"></div>
-                    </div>
-                  </div>
-                  <svg class="w-100" width="295" height="352" viewBox="0 0 295 352" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path *ngFor="let item of maps" [attr.d]="item.pathSvg" [attr.id]="item.id" [attr.data-name]="item.prNameEn"
-                      (mouseenter)="mouseEnter( 'SLTP', $event,  item.id)"
-		                  (mouseleave)="mouseLeave( 'SLTP', $event,  item.id)"
-                      [attr.fill]="colors.default" stroke="white" stroke-width="0.5"
-                      style="cursor: pointer;"
-                      />
-                  </svg>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12 col-xs-12">
+<!--            <div class="col-md-4 col-sm-12 col-xs-12">-->
+<!--                <div class="map" id="position-cal" style="height: 100%;">-->
+<!--                  <div id="SLTP" #SLTP  (mouseenter)="toolTipCanClick()" (mouseleave)="toolTipCanNotClick()" >-->
+<!--                    <div *ngIf="enableTooltip && showToolTip">-->
+<!--                      <div class="hero1" >-->
+<!--                        <span class="tool-tip-text" style="font-weight: 500;">{{provinceName}}</span>-->
+<!--                        <br>-->
+<!--                        <span (click)="openDialog(proviceID,provinceName)" class="tool-tip-text" style="font-weight: 700; cursor: pointer;">{{school}} {{'DASHBOARD.SCHOOL' | translate}}</span>-->
+<!--                      </div>-->
+<!--                      <div class="hero2"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <svg class="w-100" width="295" height="352" viewBox="0 0 295 352" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                      <path *ngFor="let item of maps" [attr.d]="item.pathSvg" [attr.id]="item.id" [attr.data-name]="item.prNameEn"-->
+<!--                      (mouseenter)="mouseEnter( 'SLTP', $event,  item.id)"-->
+<!--		                  (mouseleave)="mouseLeave( 'SLTP', $event,  item.id)"-->
+<!--                      [attr.fill]="colors.default" stroke="white" stroke-width="0.5"-->
+<!--                      style="cursor: pointer;"-->
+<!--                      />-->
+<!--                  </svg>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-md-12 col-sm-12 col-xs-12">
                 <!-- <div class="row" > -->
                     <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: -10px;">
                         <div class="col-md-6 col-sm-12 col-xs-12 material-dashboard">
@@ -232,141 +232,141 @@
                 <!-- </div> -->
             </div>
         </div>
-        <div class="row" style="margin-right: 25px;">
-          <div class="col-md-12 col-xs-12" style="margin-top: 20px; margin-bottom: 20px ; height: 100%; background: #ffffff; border-radius: 8px;">
-            <div class="menu-action-dv">
-              <h3 style="padding-left: 15px; text-transform: uppercase">{{'DASHBOARD.REVENUE_BY_DTPK' | translate}}</h3>
-            </div>
-            <div class="menu-action-dv row h-100" style="margin-top: 24px;">
-              <div class="col-md-2" style="text-align: left">
-                <span class="chart-title" style="position: absolute; bottom: 0; left: 6px;">{{'DASHBOARD.REVENUE' | translate}} ($)</span>
-              </div>
-              <div class="col-md-8 col-xs-12"></div>
-              <div class="col-md-2" style="text-align: right">
-                  <span class="chart-title" style="position: absolute; bottom: 0; right: 18px;">{{'DASHBOARD.QUANTITY_USER' | translate}}</span>
-              </div>
-            </div>
-            <div style="display: block; box-sizing: border-box;">
-              <div #container>
-              </div>
-              <kendo-chart style="margin-bottom: 20px; width: 98%; margin-left: 1%" #chart>
-                <!--    <kendo-chart-title text="DOANH THU THEO GÓI CƯỚC"></kendo-chart-title>-->
-                <!--          <kendo-chart-legend position="top"></kendo-chart-legend>-->
-                          <kendo-chart-value-axis>
-                            <kendo-chart-value-axis-item [name]="valueAxesCol.name"
-                                [min]="valueAxesCol.min" [max]="colMax" [majorUnit]="colMajorUnit" [color]="valueAxesCol.color"
-                                 [labels]="{
-                                   font: valueAxesCol.labels.font,
-                                   color: valueAxesCol.labels.color,
-                                   margin: {
-                                     right: marginLabelCol,
-                                     bottom: valueAxesCol.labels.margin.bottom
-                                   }
-                                 }"
-                                [majorTicks]="{
-                                  size: majorTickColSize,
-                                  color: 'rgb(216, 218, 229)',
-                                  width: 1
-                                }"
-                                >
-                            </kendo-chart-value-axis-item>
-                            <kendo-chart-value-axis-item [name]="valueAxesLine.name"
-                                [min]="valueAxesLine.min" [max]="lineMax" [majorUnit]="lineMajorUnit" [color]="valueAxesLine.color"
-                                 [labels]="{
-                                  font: valueAxesLine.labels.font,
-                                  color: valueAxesLine.labels.color,
-                                  margin: {
-                                    left: marginLabelLine,
-                                    bottom: valueAxesLine.labels.margin.bottom
-                                  }
-                                }"
-                                [majorTicks]="{
-                                  size: majorTickLineSize,
-                                  color: 'rgb(216, 218, 229)',
-                                  width: 1
-                                }"
-                                >
-                            </kendo-chart-value-axis-item>
-                          </kendo-chart-value-axis>
-                          <kendo-chart-tooltip> </kendo-chart-tooltip>
-                            <kendo-chart-category-axis >
-                                <kendo-chart-category-axis-item [categories]="categories" [axisCrossingValue]="crossingValues"
-                                [majorGridLines]="{visible: false}" [line]="{color:'#D8DAE5'}" [majorTicks]="categoryMajorTicks"
-                                [labels]="{visual: visual3}"
-                                >
-                                  <kendo-chart-category-axis-item-labels [rotation]="labels.rotation" [font]="labels.font"
-                                    [color]="labels.color" [content]="content1" [visible]="true" [position]="'start'"
-                                    [visual]="visual3"
-                                  >
-                                  </kendo-chart-category-axis-item-labels>
-                                </kendo-chart-category-axis-item>
-                            </kendo-chart-category-axis>
+<!--        <div class="row" style="margin-right: 25px;">-->
+<!--          <div class="col-md-12 col-xs-12" style="margin-top: 20px; margin-bottom: 20px ; height: 100%; background: #ffffff; border-radius: 8px;">-->
+<!--            <div class="menu-action-dv">-->
+<!--              <h3 style="padding-left: 15px; text-transform: uppercase">{{'DASHBOARD.REVENUE_BY_DTPK' | translate}}</h3>-->
+<!--            </div>-->
+<!--            <div class="menu-action-dv row h-100" style="margin-top: 24px;">-->
+<!--              <div class="col-md-2" style="text-align: left">-->
+<!--                <span class="chart-title" style="position: absolute; bottom: 0; left: 6px;">{{'DASHBOARD.REVENUE' | translate}} ($)</span>-->
+<!--              </div>-->
+<!--              <div class="col-md-8 col-xs-12"></div>-->
+<!--              <div class="col-md-2" style="text-align: right">-->
+<!--                  <span class="chart-title" style="position: absolute; bottom: 0; right: 18px;">{{'DASHBOARD.QUANTITY_USER' | translate}}</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div style="display: block; box-sizing: border-box;">-->
+<!--              <div #container>-->
+<!--              </div>-->
+<!--              <kendo-chart style="margin-bottom: 20px; width: 98%; margin-left: 1%" #chart>-->
+<!--                &lt;!&ndash;    <kendo-chart-title text="DOANH THU THEO GÓI CƯỚC"></kendo-chart-title>&ndash;&gt;-->
+<!--                &lt;!&ndash;          <kendo-chart-legend position="top"></kendo-chart-legend>&ndash;&gt;-->
+<!--                          <kendo-chart-value-axis>-->
+<!--                            <kendo-chart-value-axis-item [name]="valueAxesCol.name"-->
+<!--                                [min]="valueAxesCol.min" [max]="colMax" [majorUnit]="colMajorUnit" [color]="valueAxesCol.color"-->
+<!--                                 [labels]="{-->
+<!--                                   font: valueAxesCol.labels.font,-->
+<!--                                   color: valueAxesCol.labels.color,-->
+<!--                                   margin: {-->
+<!--                                     right: marginLabelCol,-->
+<!--                                     bottom: valueAxesCol.labels.margin.bottom-->
+<!--                                   }-->
+<!--                                 }"-->
+<!--                                [majorTicks]="{-->
+<!--                                  size: majorTickColSize,-->
+<!--                                  color: 'rgb(216, 218, 229)',-->
+<!--                                  width: 1-->
+<!--                                }"-->
+<!--                                >-->
+<!--                            </kendo-chart-value-axis-item>-->
+<!--                            <kendo-chart-value-axis-item [name]="valueAxesLine.name"-->
+<!--                                [min]="valueAxesLine.min" [max]="lineMax" [majorUnit]="lineMajorUnit" [color]="valueAxesLine.color"-->
+<!--                                 [labels]="{-->
+<!--                                  font: valueAxesLine.labels.font,-->
+<!--                                  color: valueAxesLine.labels.color,-->
+<!--                                  margin: {-->
+<!--                                    left: marginLabelLine,-->
+<!--                                    bottom: valueAxesLine.labels.margin.bottom-->
+<!--                                  }-->
+<!--                                }"-->
+<!--                                [majorTicks]="{-->
+<!--                                  size: majorTickLineSize,-->
+<!--                                  color: 'rgb(216, 218, 229)',-->
+<!--                                  width: 1-->
+<!--                                }"-->
+<!--                                >-->
+<!--                            </kendo-chart-value-axis-item>-->
+<!--                          </kendo-chart-value-axis>-->
+<!--                          <kendo-chart-tooltip> </kendo-chart-tooltip>-->
+<!--                            <kendo-chart-category-axis >-->
+<!--                                <kendo-chart-category-axis-item [categories]="categories" [axisCrossingValue]="crossingValues"-->
+<!--                                [majorGridLines]="{visible: false}" [line]="{color:'#D8DAE5'}" [majorTicks]="categoryMajorTicks"-->
+<!--                                [labels]="{visual: visual3}"-->
+<!--                                >-->
+<!--                                  <kendo-chart-category-axis-item-labels [rotation]="labels.rotation" [font]="labels.font"-->
+<!--                                    [color]="labels.color" [content]="content1" [visible]="true" [position]="'start'"-->
+<!--                                    [visual]="visual3"-->
+<!--                                  >-->
+<!--                                  </kendo-chart-category-axis-item-labels>-->
+<!--                                </kendo-chart-category-axis-item>-->
+<!--                            </kendo-chart-category-axis>-->
 
-                            <kendo-chart-series>
-                              <kendo-chart-series-item  [data]="seriesLine.data" [type]="seriesLine.type"
-                                  [color]="seriesLine.color" [axis]="seriesLine.axis" [markers]="markers" [highlight]="highlightLine" >
-                                  <kendo-chart-series-item-tooltip>
-                                    <ng-template let-value="value" let-category ="category" style="background: none !important;">
-                                      <div style="position: relative;" [style.margin-left.px]="margin(category)">
-                                        <div class="hero3" style="display: flex;">
-                                          <div style="min-width: fit-content;">
-                                            <span class="title-tooltip">{{'DASHBOARD.QUANTITY_USER_SHORT' | translate}}</span>
-                                            <br/>
-                                            <span class="main-tooltip" style="margin-left: -25px; padding: 10px;">
-                                              {{ value | number }}
-                                            </span>
-                                          </div>
-                                          <div style="width: 0%; border-left: 1px solid rgba(255, 255, 255, 0.5); height: 60%; margin-top: 5%;"></div>
-                                          <div style="min-width: fit-content;">
-                                            <span class="title-tooltip">{{'DASHBOARD.DATA_PACKAGE' | translate}}</span>
-                                            <br/>
-                                            <span class="main-tooltip" style="padding: 10px;">
-                                              {{ category }}
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <div class="hero4"></div>
-                                      </div>
-                                    </ng-template>
-                                  </kendo-chart-series-item-tooltip>
-                              </kendo-chart-series-item>
-                              <kendo-chart-series-item  [data]="seriesCol.data" [type]="seriesCol.type"
-                                  [color]="seriesCol.color" [axis]="seriesCol.axis" [highlight]="{ visual : visualCol}" [border]="{width: 0}" >
-                                  <kendo-chart-series-item-tooltip>
-                                    <ng-template let-value="value" let-category ="category" style="background: none !important;">
-                                      <div style="position: relative; margin-top: -55px;" [style.margin-left.px]="margin(category)">
-                                        <div class="hero5" style="display: flex;">
-                                          <div>
-                                            <span class="title-tooltip">{{'DASHBOARD.REVENUE' | translate}}</span>
-                                            <br/>
-                                            <span class="main-tooltip" style="padding: 10px;">
-                                              ${{ value | number }}
-                                            </span>
-                                          </div>
-                                          <div style="width: 0%; border-left: 1px solid rgba(255, 255, 255, 0.5); height: 60%; margin-top: 5%;"></div>
-                                          <div>
-                                            <span class="title-tooltip">{{'DASHBOARD.DATA_PACKAGE' | translate}}</span>
-                                            <br/>
-                                            <span class="main-tooltip" style="padding: 10px;">
-                                              {{ category }}
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <div class="hero6"></div>
-                                      </div>
-                                    </ng-template>
-                                  </kendo-chart-series-item-tooltip>
-                              </kendo-chart-series-item>
-                            </kendo-chart-series>
-                </kendo-chart>
-                <kendo-popup [anchor]="state.anchor" *ngIf="state.show">
-                  <div style="font-size: 10px; font-weight: bold; background-color: #FFFFFF; font-family: Inter; z-index: 999;">
-                    {{state.popupValue}}
-                  </div>
-                </kendo-popup>
-            </div>
-         </div>
-        </div>
+<!--                            <kendo-chart-series>-->
+<!--                              <kendo-chart-series-item  [data]="seriesLine.data" [type]="seriesLine.type"-->
+<!--                                  [color]="seriesLine.color" [axis]="seriesLine.axis" [markers]="markers" [highlight]="highlightLine" >-->
+<!--                                  <kendo-chart-series-item-tooltip>-->
+<!--                                    <ng-template let-value="value" let-category ="category" style="background: none !important;">-->
+<!--                                      <div style="position: relative;" [style.margin-left.px]="margin(category)">-->
+<!--                                        <div class="hero3" style="display: flex;">-->
+<!--                                          <div style="min-width: fit-content;">-->
+<!--                                            <span class="title-tooltip">{{'DASHBOARD.QUANTITY_USER_SHORT' | translate}}</span>-->
+<!--                                            <br/>-->
+<!--                                            <span class="main-tooltip" style="margin-left: -25px; padding: 10px;">-->
+<!--                                              {{ value | number }}-->
+<!--                                            </span>-->
+<!--                                          </div>-->
+<!--                                          <div style="width: 0%; border-left: 1px solid rgba(255, 255, 255, 0.5); height: 60%; margin-top: 5%;"></div>-->
+<!--                                          <div style="min-width: fit-content;">-->
+<!--                                            <span class="title-tooltip">{{'DASHBOARD.DATA_PACKAGE' | translate}}</span>-->
+<!--                                            <br/>-->
+<!--                                            <span class="main-tooltip" style="padding: 10px;">-->
+<!--                                              {{ category }}-->
+<!--                                            </span>-->
+<!--                                          </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="hero4"></div>-->
+<!--                                      </div>-->
+<!--                                    </ng-template>-->
+<!--                                  </kendo-chart-series-item-tooltip>-->
+<!--                              </kendo-chart-series-item>-->
+<!--                              <kendo-chart-series-item  [data]="seriesCol.data" [type]="seriesCol.type"-->
+<!--                                  [color]="seriesCol.color" [axis]="seriesCol.axis" [highlight]="{ visual : visualCol}" [border]="{width: 0}" >-->
+<!--                                  <kendo-chart-series-item-tooltip>-->
+<!--                                    <ng-template let-value="value" let-category ="category" style="background: none !important;">-->
+<!--                                      <div style="position: relative; margin-top: -55px;" [style.margin-left.px]="margin(category)">-->
+<!--                                        <div class="hero5" style="display: flex;">-->
+<!--                                          <div>-->
+<!--                                            <span class="title-tooltip">{{'DASHBOARD.REVENUE' | translate}}</span>-->
+<!--                                            <br/>-->
+<!--                                            <span class="main-tooltip" style="padding: 10px;">-->
+<!--                                              ${{ value | number }}-->
+<!--                                            </span>-->
+<!--                                          </div>-->
+<!--                                          <div style="width: 0%; border-left: 1px solid rgba(255, 255, 255, 0.5); height: 60%; margin-top: 5%;"></div>-->
+<!--                                          <div>-->
+<!--                                            <span class="title-tooltip">{{'DASHBOARD.DATA_PACKAGE' | translate}}</span>-->
+<!--                                            <br/>-->
+<!--                                            <span class="main-tooltip" style="padding: 10px;">-->
+<!--                                              {{ category }}-->
+<!--                                            </span>-->
+<!--                                          </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="hero6"></div>-->
+<!--                                      </div>-->
+<!--                                    </ng-template>-->
+<!--                                  </kendo-chart-series-item-tooltip>-->
+<!--                              </kendo-chart-series-item>-->
+<!--                            </kendo-chart-series>-->
+<!--                </kendo-chart>-->
+<!--                <kendo-popup [anchor]="state.anchor" *ngIf="state.show">-->
+<!--                  <div style="font-size: 10px; font-weight: bold; background-color: #FFFFFF; font-family: Inter; z-index: 999;">-->
+<!--                    {{state.popupValue}}-->
+<!--                  </div>-->
+<!--                </kendo-popup>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--        </div>-->
     </div>
     <div class="page-loading-class" style="top: -100px !important; height: 113% !important; bottom: 0 !important;" *ngIf="hide===false">
       <div class="bee-spinner-sc"></div>
