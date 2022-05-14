@@ -117,6 +117,15 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy{
     exist: '#5F9EA0',
   }
 
+  currentRoles;
+  isGV = false;
+  loginCode;
+  countClass;
+  countTeacher;
+  countStudent;
+  countExam;
+  role;
+
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private dashboardService: DashboardService,
@@ -125,6 +134,11 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy{
     private _adapter: DateAdapter<any>,
     private translationService: TranslationService
   ) {
+    this.loginCode = JSON.parse(localStorage.getItem('currentUser')).login;
+    this.currentRoles = JSON.parse(localStorage.getItem('currentUser')).authorities;
+    this.currentRoles.forEach(e=>{
+      this.role = e;
+    })
   }
 
   ngAfterViewInit(){
@@ -154,6 +168,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy{
     // }
     // this.dataForSearch.monthForStatistic = this.dateSearch;
     // this.search();
+    this.getData();
   }
 
   ngOnDestroy(){
@@ -692,4 +707,17 @@ public valueAxesCol =
 // crossing value greater than or equal to
 // the number of categories.
 public crossingValues: number[] = [0,100];
+  getData(){
+    let code = '';
+    if(this.role === 'ROLE_GV'){
+      code = this.loginCode;
+    }
+    this.dashboardService.getData(code).subscribe(res =>{
+      this.countClass = res.countClass;
+      this.countTeacher = res.countTeacher;
+      this.countStudent = res.countStudent;
+      this.countExam = res.countExam;
+      this.changeDetectorRef.detectChanges();
+    })
+  }
 }

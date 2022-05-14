@@ -64,13 +64,31 @@ export class ExamStudentDetailComponent implements OnInit, OnDestroy {
   }
 
   getData(){
-    this.examService.getDataExamUser(this.queryParam.id).subscribe(res =>{
+    this.examService.getDataExamUser(this.queryParam.id, this.studentCode).subscribe(res =>{
       this.examUser = res;
-      this.questions = this.examUser.lstQuestion;
-      this.counter = res.durationExam * 60;
-      this.time = res.durationExam * 60;
-      this.startTimer();
-      this.changeDetectorRef.detectChanges();
+      if(res.statusExam === 1){
+        // Thông báo
+        const dataConfirm = {title: 'Thông báo', message: 'Đã hết thời gian làm bài thi'};
+        this.matDialog.open(PopupConfirmComponent, {
+          data: dataConfirm,
+          disableClose: true,
+          hasBackdrop: true,
+          width: '420px'
+        }).afterClosed().subscribe(resCF => {
+          if (resCF.event === 'confirm') {
+            // Call API
+            window.history.back();
+          }else{
+            window.history.back();
+          }
+        });
+      }else{
+        this.questions = this.examUser.lstQuestion;
+        this.counter = res.durationExam * 60;
+        this.time = res.durationExam * 60;
+        this.startTimer();
+        this.changeDetectorRef.detectChanges();
+      }
     })
   }
 

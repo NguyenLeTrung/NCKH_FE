@@ -81,7 +81,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <!-- <div class="row" > -->
                     <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: -10px;">
-                        <div class="col-md-6 col-sm-12 col-xs-12 material-dashboard">
+                        <div class="col-md-6 col-sm-12 col-xs-12 material-dashboard" *ngIf="role !== 'ROLE_SV'">
                           <div class="materila-dashboard-content row" id="first">
                             <div class="sub-material-dashboard col-md-3 col-sm-3 col-xs-3">
                               <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,11 +92,11 @@
                             <div class="sub-material-dashboard1 col-md-9 col-sm-9 col-xs-9">
                               <span class="material-dashboard-text" style="color: #3366FF;">Số lớp học</span>
                               <br/>
-                              <span class="material-dashboard-quantity" [matTooltip]="numberOfDataPackage">{{numberOfDataPackage | number}}</span>
+                              <span class="material-dashboard-quantity" [matTooltip]="countClass">{{countClass | number}}</span>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12 material-dashboard">
+                        <div class="col-md-6 col-sm-12 col-xs-12 material-dashboard" *ngIf="role === 'ROLE_ADMIN'">
                           <div class="materila-dashboard-content row" id="second" [style.background-image]="image.image1">
                             <div class="sub-material-dashboard col-md-3 col-sm-3 col-xs-3">
                               <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +109,7 @@
                               <br/>
                               <div style="display: flex;">
                                 <div class="dashboard-infor-statistical1" [style.min-width]="minWidth1 + '%'" >
-                                  <span class="material-dashboard-quantity" [matTooltip]="numberOfUser">{{numberOfUser | number}}</span>
+                                  <span class="material-dashboard-quantity" [matTooltip]="countTeacher">{{countTeacher | number}}</span>
                                 </div>
                                 <div class="dashboard-infor-statistical">
                                   <svg *ngIf="userGrowthRate != null && userGrowthRate >= 0" style="margin-left: 10px; margin-top: -4px; margin-right:1px;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +139,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12 material-dashboard">
+                        <div class="col-md-6 col-sm-12 col-xs-12 material-dashboard" *ngIf="role === 'ROLE_ADMIN'">
 
                           <div class="materila-dashboard-content row" id="third" [style.background-image]="image.image2">
                             <div class="sub-material-dashboard col-md-3 col-sm-3 col-xs-3">
@@ -155,7 +155,7 @@
                               <br/>
                               <div style="display: flex;">
                                 <div class="dashboard-infor-statistical1" [style.min-width]="minWidth2 + '%'">
-                                  <span class="material-dashboard-quantity" [matTooltip]="numberOfSchoolOnSystem">{{numberOfSchoolOnSystem | number}}</span>
+                                  <span class="material-dashboard-quantity" [matTooltip]="countStudent">{{countStudent | number}}</span>
                                 </div>
                                 <div class="dashboard-infor-statistical">
                                   <svg *ngIf="schoolGrowthRate != null && schoolGrowthRate >= 0" style="margin-left: 10px; margin-top: -4px; margin-right:1px;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,19 +198,19 @@
                               <br/>
                               <div style="display: flex;">
                                 <div>
-                                  <span class="material-dashboard-quantity" [matTooltip]="'$'+revenue">${{revenue}}</span>
+                                  <span class="material-dashboard-quantity" [matTooltip]="countExam">{{countExam}}</span>
                                 </div>
                                 <div class="dashboard-infor-statistical">
-                                  <svg *ngIf="revenueGrowthRate != null && revenueGrowthRate >= 0" style="margin-left: 10px; margin-top: -4px; margin-right:1px;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0)">
-                                    <path d="M6.26795 1C7.03775 -0.333332 8.96225 -0.333334 9.73205 0.999999L14.9282 10C15.698 11.3333 14.7358 13 13.1962 13H2.80385C1.26425 13 0.301996 11.3333 1.0718 10L6.26795 1Z" fill="#19C09A"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0">
-                                    <rect width="16" height="16" fill="white" transform="translate(0 16) rotate(-90)"/>
-                                    </clipPath>
-                                    </defs>
-                                    </svg>
+<!--                                  <svg *ngIf="revenueGrowthRate != null && revenueGrowthRate >= 0" style="margin-left: 10px; margin-top: -4px; margin-right:1px;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                    <g clip-path="url(#clip0)">-->
+<!--                                    <path d="M6.26795 1C7.03775 -0.333332 8.96225 -0.333334 9.73205 0.999999L14.9282 10C15.698 11.3333 14.7358 13 13.1962 13H2.80385C1.26425 13 0.301996 11.3333 1.0718 10L6.26795 1Z" fill="#19C09A"/>-->
+<!--                                    </g>-->
+<!--                                    <defs>-->
+<!--                                    <clipPath id="clip0">-->
+<!--                                    <rect width="16" height="16" fill="white" transform="translate(0 16) rotate(-90)"/>-->
+<!--                                    </clipPath>-->
+<!--                                    </defs>-->
+<!--                                    </svg>-->
                                     <svg *ngIf="revenueGrowthRate && revenueGrowthRate < 0" style="margin-left: 10px; margin-right:1px;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                       <g clip-path="url(#clip0)">
                                       <path d="M9.73205 15C8.96225 16.3333 7.03775 16.3333 6.26795 15L1.0718 6C0.301997 4.66667 1.26425 3 2.80385 3L13.1962 3C14.7358 3 15.698 4.66667 14.9282 6L9.73205 15Z" fill="#D14343"/>

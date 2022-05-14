@@ -9,6 +9,7 @@ import {QuestionService} from "../../../../../core/service/service-model/questio
 import {SearchQuestionModel} from "../../../../../core/service/model/search-question.model";
 import {Router} from "@angular/router";
 import {ExamService} from "../../../../../core/service/service-model/exam.service";
+import * as moment from 'moment';
 
 @Component({
   selector: 'kt-create-update-exams',
@@ -51,7 +52,7 @@ export class CreateUpdateExamsComponent implements OnInit {
       title: new FormControl('', [Validators.required, Validators.maxLength(250)]),
       subjectCode: new FormControl(null, [Validators.required]),
       examType: new FormControl(null, [Validators.required]),
-      beginExam: new FormControl(formatDate(new Date(), 'dd/MM/yyyy', 'en-EN'), [Validators.required]),
+      beginExam: new FormControl(null,[Validators.required]),
       finshExam: new FormControl(null, [Validators.required]),
       durationExam: new FormControl(null, [Validators.required]),
       randomQuestion: new FormControl(false),
@@ -74,9 +75,9 @@ export class CreateUpdateExamsComponent implements OnInit {
 
   submit(){
     const exam: any = {};
-    exam.beginExam = this.getControl.beginExam.value;
+    exam.beginExam = moment.utc(this.getControl.beginExam.value);
     exam.durationExam = this.getControl.durationExam.value;
-    exam.finishExam = this.getControl.finshExam.value;
+    exam.finishExam = moment.utc(this.getControl.finshExam.value);
     exam.subjectCode = this.getControl.subjectCode.value;
     exam.title = this.getControl.title.value;
     let lstData = [];

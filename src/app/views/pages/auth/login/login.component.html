@@ -18,11 +18,6 @@
               *ngIf="loginForm.get('phone').errors?.isNullUser">
             {{'AUTH.LOGIN.USERNAME_NOT_BLANK' | translate}}
         </span>
-        <!--<span class="cross-validation-error-message alert error_div"-->
-        <!--[ngClass]="{'is-invalid': f.get('phone').touched && f.get('phone').invalid}"-->
-        <!--*ngIf="loginForm.get('phone').errors?.pattern">-->
-        <!--Số điện thoại chỉ được phép nhập số từ 0-9-->
-        <!--</span>-->
       </div>
       <div>
         <label>{{'AUTH.LOGIN.PASSWORD' | translate}}</label>

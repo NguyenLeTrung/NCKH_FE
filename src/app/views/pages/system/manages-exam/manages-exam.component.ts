@@ -114,10 +114,10 @@ export class ManagesExamComponent implements OnInit {
         headerName: "Thời gian bắt đầu thi",
         field: "beginExam",
         cellRenderer: (param) => {
-          return `${moment(param.data.beginExam).format("DD/MM/YYYY")}`;
+          return `${moment(param.data.beginExam).format("DD/MM/YYYY HH:mm:ss")}`;
         },
         tooltipValueGetter: (param) => {
-          return `${moment(param.data.beginExam).format("DD/MM/YYYY")}`;
+          return `${moment(param.data.beginExam).format("DD/MM/YYYY HH:mm:ss")}`;
         },
         cellStyle: {
           "font-weight": "500",
@@ -135,10 +135,10 @@ export class ManagesExamComponent implements OnInit {
         headerName: "Thời gian kết thúc thi",
         field: "finishExam",
         cellRenderer: (param) => {
-          return `${moment(param.data.finishExam).format("DD/MM/YYYY")}`;
+          return `${moment(param.data.finishExam).format("DD/MM/YYYY HH:mm:ss")}`;
         },
         tooltipValueGetter: (param) => {
-          return `${moment(param.data.finishExam).format("DD/MM/YYYY")}`;
+          return `${moment(param.data.finishExam).format("DD/MM/YYYY HH:mm:ss")}`;
         },
         cellStyle: {
           "font-weight": "500",

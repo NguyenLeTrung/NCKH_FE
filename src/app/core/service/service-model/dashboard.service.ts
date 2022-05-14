@@ -39,4 +39,8 @@ import { CommonServiceService } from '../utils/common-service.service';
     getListSchoolByProvince(id){
       return this.http.get<any>(`${this.API}getSchoolsByProvinceId/${id}`, this.httpOptions);
     }
+
+    getData(code: string):Observable<any>{
+      return this.http.get<any>(`${this.API}dashboard/home?code=${code}`)
+    }
 }

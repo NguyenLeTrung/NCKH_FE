@@ -39,6 +39,9 @@ export class ManagesClassroomComponent implements OnInit {
   totalClass = 0;
   listTeacher = [];
   listStatus = list_status;
+  currentRoles;
+  loginCode;
+  disable = false;
   constructor(private matDialog: MatDialog,
               private changeDetectorRef: ChangeDetectorRef,
               private classroomService: ClassroomService,
@@ -105,7 +108,7 @@ export class ManagesClassroomComponent implements OnInit {
         field: 'teacherCode',
       },
       {
-        headerName: "Giáo viên",
+        headerName: "Giảng viên",
         field: "teacherName",
         cellStyle: {
           "font-weight": "500",
@@ -183,7 +186,7 @@ export class ManagesClassroomComponent implements OnInit {
         tooltipField: "createName",
       },
       {
-        headerName: "Danh sách học sinh",
+        headerName: "Danh sách sinh viên",
         cellRendererFramework: ViewClassStudentComponent,
         minWidth: 150,
         maxWidth: 150,
@@ -205,8 +208,17 @@ export class ManagesClassroomComponent implements OnInit {
       "{{field}}",
       "Không có thông tin"
     );
+    this.currentRoles = JSON.parse(localStorage.getItem('currentUser')).authorities;
+    this.loginCode = JSON.parse(localStorage.getItem('currentUser')).login;
     this.classroomSearchModel.status = 1;
     this.classroomSearchModel.name = '';
+    this.currentRoles.forEach(e=>{
+      if(e === 'ROLE_GV'){
+        this.classroomSearchModel.teacherCode = this.loginCode;
+        this.disable = true;
+        return;
+      }
+    })
   }
 
   ngOnInit(): void {

@@ -63,7 +63,8 @@ export const locale = {
       BOOK: 'Quản lý môn học',
       ACCOUNT: 'Quản trị bài thi',
       LIST_EXAM: 'Kết quả bài thi',
-      EXAM: 'Danh sách bài thi',      SCHOOL: {
+      EXAM: 'Danh sách bài thi',
+      SCHOOL: {
         TITLE: 'Nhà trường',
         CONFIGUARATION: 'Cấu hình trường học',
         SCHOOL_YEAR: 'Cấu hình năm học',
@@ -83,7 +84,7 @@ export const locale = {
         // MANAGER_REGISTER:'Quản lý đăng ký',
         MANAGER_SCHOOL:'Quản lý trường học',
       },
-      MANAGER_TEACHER: 'Quản lý giáo viên',
+      MANAGER_TEACHER: 'Quản lý giảng viên',
       MANAGER_STUDENT: 'Quản lý sinh viên',
       SYSTEM: {
         TITLE: 'Cấu hình hệ thống',

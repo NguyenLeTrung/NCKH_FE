@@ -41,8 +41,8 @@ export class ExamService {
     return this.httpClient.get<any>(`${this.API}exams/${id}`);
   }
 
-  getDataExamUser(id: number):Observable<any>{
-    return this.httpClient.get<any>(`${this.API}exam-users/findByExamId/${id}`);
+  getDataExamUser(id: number, studentCod: string):Observable<any>{
+    return this.httpClient.get<any>(`${this.API}exam-users/findByExamId/${id}?studentCode=${studentCod}`);
   }
 
   addExamUser(examUser: any):Observable<any>{

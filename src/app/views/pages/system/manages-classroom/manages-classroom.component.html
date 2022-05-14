@@ -40,7 +40,7 @@
           <input type="text" style="font-size: 12px; font-weight: 400; font-family: Inter; line-height: 16px; color: #696F8C !important;" placeholder="Nhập thông tin tra cứu" [(ngModel)]="this.classroomSearchModel.name">
         </div>
         <div class="col-md-3" style="padding-left: 0">
-          <label style="font-size: 14px; font-weight: 600; font-family: Inter; line-height: 24px; color: #474D66 !important;">Tên giáo viên</label>
+          <label style="font-size: 14px; font-weight: 600; font-family: Inter; line-height: 24px; color: #474D66 !important;">Tên giảng viên</label>
           <ng-select
             [items]="listTeacher"
             bindLabel="fullName"
@@ -55,6 +55,7 @@
               line-height: 16px;
               font-weight: 400 !important;
             "
+            [disabled]="disable"
           >
             <ng-template ng-option-tmp let-item="item">
               <div
